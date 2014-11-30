@@ -18,8 +18,8 @@
     }
 
     function categoriesLoaded(data) {
-        $('body').empty();
-        $('body').append('<h2>Categories</h2>')
+        
+        $('#categoryName').append('<h2>Categories</h2>')
             .append('<input type="text" id="add-category-text" />')
             .append('<a id="add-category-button" href="#">Add category</a>')
             .append('<ul class="categories"></ul>');
