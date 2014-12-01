@@ -47,7 +47,7 @@
         removeButton.data('category', category);
         removeButton.click(removeCategory);
 
-        var editButton = $('<a class="edit-country" href="#">Edit</a>');
+        var editButton = $('<a class="edit-category" href="#">Edit</a>');
         editButton.data('category', category);
         editButton.click(editCategory);
 
@@ -117,8 +117,8 @@
 
         if (!$(this).parent().has('ul').length) {
             var targetLi = $("li:contains('" + category.name + "')");
-            var postTitle = $('<br><input type="text" class="add-post-text" placeholder="category name" /><br>');
-            var postContent = $('<textarea class="add-post-content" placeholder="category content"></textarea>');
+            var postTitle = $('<br><input type="text" class="add-post-title" placeholder="Post name" /><br>');
+            var postContent = $('<textarea class="add-post-content" placeholder="Post content"></textarea>');
             var addPostButton = $('<a id="add-post-button" href="#">Add a post</a>');
             addPostButton.data('category', category);
             addPostButton.data('postTitle', postTitle);
@@ -285,7 +285,12 @@
     }
 
     function error() {
-        alert('Cannot load AJAX data.')
+        noty({
+			text: 'Cannot load AJAX data.',
+			type: 'error',
+			layout: 'topCenter',
+			timeout: 5000}
+			);
     }
 });
 
