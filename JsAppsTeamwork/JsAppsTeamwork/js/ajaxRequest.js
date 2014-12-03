@@ -154,15 +154,24 @@
             editPostButton.data('post', data.results[p]);
             editPostButton.click(editPost);
 
-            var commentAuthor = $('<input type="text" class="add-comment-author" placeholder="Title..."/>');
+            var commentAuthor = $('<input type="text" class="add-comment-author" placeholder="Author..."/>');
             var commentContent = $('<input type="text" class="add-comment-content" placeholder="Content..."/>');
             var addCommentButton = $('<a id="add-post-button" href="#">Add a comment</a>');
+
+            var showCommentButton = $('<a id="show-comment-button" href="#">Show comments</a>'); 
+            showCommentButton.data('comment', data.results[p]); 
+            showCommentButton.click(loadComments);
 
             addCommentButton.data('post', data.results[p]);
             addCommentButton.data('author', commentAuthor);
             addCommentButton.data('content', commentContent);
 
             addCommentButton.click(addComment);
+
+            var commentsUl = $('<ul>'); 
+            var commentsLI = $('<li>'); 
+            commentsLI.addClass(data.results[p].objectId); 
+            commentsLI.appendTo(commentsUl);
 
             var removePostButton = $('<a href="#">Remove</a>');
             removePostButton.data('post', data.results[p]);
@@ -177,7 +186,11 @@
                 .append(commentAuthor)
                 .append(' ')
                 .append(commentContent)
-                .append(addCommentButton);
+                .append(addCommentButton) 
+                .append('<br>') 
+                .append(showCommentButton) 
+                .append('<br>') 
+                .append(commentsUl); 
         }
 
         postsUl.appendTo(targetLi);
@@ -323,20 +336,7 @@
     }
 
     function loadComments() {
-        var post = $(this).data('post');
-        if (!$(this).parent().has('div').length) {
-            var targetP = $("p:contains('" + post.title + "')");
-            var commentAuthor = $('<br><input type="text" class="add-comment-author" placeholder="Author name" /><br>');
-            var commentContent = $('<textarea class="add-post-content" placeholder="Comment content"></textarea>');
-            var addCommentButton = $('<a id="add-comment-button" href="#">Add a comment</a>');
-            addCommentButton.data('post', post);
-            addCommentButton.data('commentAuthor', commentAuthor);
-            addCommentButton.data('commentContent', commentContent);
-            addCommentButton.click(addComment);
-            targetP.append(commentAuthor).append(commentContent).append(addCommentButton);
-            targetP.insertAfter($('.div :last:child'))
-
-        }
+        var post = $(this).data('comment'); 
         $.ajax({
             method: "GET",
             headers: {
@@ -351,8 +351,10 @@
     }
 
     function commentsLoaded(data) {
-        var post = data.results[0].post;
-        var targetP = $('p.' + post.objectId + "")
+        var comment = data.results[0].post;         
+        console.log(comment.objectId); 
+        var targetLi = $("li." + comment.objectId + ""); 
+        var targetP = $('p.' + comment.objectId + "")
         if (targetP.has('div').length) {
             $('""' + targetP + " div").empty();
         }
@@ -372,7 +374,7 @@
                 .append(removeCommentButton)
         }
 
-        commentDiv.appendTo(targetP);
+        commentDiv.appendTo(targetLi); 
     }
 
     function error() {
