@@ -3,7 +3,10 @@
     var PARSE_REST_API_KEY = "ICtiKOhTxDXmSmQySN3sL88Q5wZ4WoUPsF7xwomN";
 
     loadCategories();
-    
+
+    var password = 'admin';
+    //TODO PASSWORD REQEST
+  
 
     function loadCategories() {
         $.ajax({
@@ -27,6 +30,7 @@
         $('#add-category-button').click(addCategory);
 
         for (var c in data.results) {
+           
             var category = data.results[c];
             var sidebar = $('<button type="button" class="btn btn-warning sidebar-button"></button>');
             sidebar.text(category.name);
@@ -84,7 +88,7 @@
     function editCategory() {
         var category = $(this).data('category');
         var oldCategoryName = category.name;
-        var newCategoryName = prompt('Rename country:', oldCategoryName) || oldCategoryName;
+        var newCategoryName = prompt('Rename :', oldCategoryName) || oldCategoryName;
 
         $.ajax({
             method: "PUT",
@@ -162,8 +166,8 @@
             var commentContent = $('<input type="text" class="add-comment-content" placeholder="Content..."/>');
             var addCommentButton = $('<a id="add-post-button" href="#">Add a comment</a>');
 
-            var showCommentButton = $('<a id="show-comment-button" href="#">Show comments</a>'); 
-            showCommentButton.data('comment', data.results[p]); 
+            var showCommentButton = $('<a id="show-comment-button" href="#">Show comments</a>');
+            showCommentButton.data('comment', data.results[p]);
             showCommentButton.click(loadComments);
 
             addCommentButton.data('post', data.results[p]);
@@ -172,9 +176,9 @@
 
             addCommentButton.click(addComment);
 
-            var commentsUl = $('<ul>'); 
-            var commentsLI = $('<li>'); 
-            commentsLI.addClass(data.results[p].objectId); 
+            var commentsUl = $('<ul>');
+            var commentsLI = $('<li>');
+            commentsLI.addClass(data.results[p].objectId);
             commentsLI.appendTo(commentsUl);
 
             var removePostButton = $('<a href="#">Remove</a>');
@@ -190,11 +194,11 @@
                 .append(commentAuthor)
                 .append(' ')
                 .append(commentContent)
-                .append(addCommentButton) 
-                .append('<br>') 
-                .append(showCommentButton) 
-                .append('<br>') 
-                .append(commentsUl); 
+                .append(addCommentButton)
+                .append('<br>')
+                .append(showCommentButton)
+                .append('<br>')
+                .append(commentsUl);
         }
 
         postsUl.appendTo(targetLi);
@@ -340,7 +344,7 @@
     }
 
     function loadComments() {
-        var post = $(this).data('comment'); 
+        var post = $(this).data('comment');
         $.ajax({
             method: "GET",
             headers: {
@@ -355,9 +359,9 @@
     }
 
     function commentsLoaded(data) {
-        var comment = data.results[0].post;         
-        console.log(comment.objectId); 
-        var targetLi = $("li." + comment.objectId + ""); 
+        var comment = data.results[0].post;
+        console.log(comment.objectId);
+        var targetLi = $("li." + comment.objectId + "");
         var targetP = $('p.' + comment.objectId + "")
         if (targetP.has('div').length) {
             $('""' + targetP + " div").empty();
@@ -378,15 +382,16 @@
                 .append(removeCommentButton)
         }
 
-        commentDiv.appendTo(targetLi); 
+        commentDiv.appendTo(targetLi);
     }
 
     function error() {
         noty({
-			text: 'Cannot load AJAX data.',
-			type: 'error',
-			layout: 'topCenter',
-			timeout: 5000}
+            text: 'Cannot load AJAX data.',
+            type: 'error',
+            layout: 'topCenter',
+            timeout: 5000
+        }
 			);
     }
 });
