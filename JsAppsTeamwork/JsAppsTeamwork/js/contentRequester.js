@@ -30,6 +30,8 @@
             var category = data.results[c];
             var sidebar = $('<button type="button" class="btn btn-warning sidebar-button"></button>');
             sidebar.text(category.name);
+			sidebar.data('category', category);
+			sidebar.click(loadPosts);
             sidebar.appendTo($('.list-unstyled'));
             var categoryItem = $('<li class="well"></li>');
             categoryItem.addClass(category.objectId);
@@ -375,8 +377,7 @@
             type: 'error',
             layout: 'topCenter',
             timeout: 5000
-        }
-			);
+        });
     }
 });
 

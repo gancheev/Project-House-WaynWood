@@ -46,7 +46,7 @@
                 text: 'Cannot load AJAX data.',
                 type: 'error',
                 layout: 'topCenter',
-                timeout: 5000}
-                );
+                timeout: 5000
+			});
         }
     });
