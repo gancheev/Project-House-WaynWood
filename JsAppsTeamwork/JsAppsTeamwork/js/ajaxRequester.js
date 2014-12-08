@@ -396,8 +396,7 @@
             type: 'error',
             layout: 'topCenter',
             timeout: 5000
-        }
-			);
+        });
     }
 });
 

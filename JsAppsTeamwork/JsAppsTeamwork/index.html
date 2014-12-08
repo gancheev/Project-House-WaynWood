@@ -20,60 +20,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script language="JavaScript">
-        var NS4 = (document.layers);
-        var IE4 = (document.all);
-        var win = window;
-        var n = 0;
-
-        function findInPage(str) {
-            var
-                txt, i, found;
-
-            if (str == "") {
-                return false;
-            }
-
-            if (NS4) {
-                if (!win.find(str)) {
-                    while (win.find(str, false, true)) {
-                        n++;
-                    }
-                } else {
-                    n++;
-                }
-
-                if (n == 0) {
-                    alert("Not found.");
-                }
-            }
-
-            if (IE4) {
-                txt = win.document.body.createTextRange();
-                for (i = 0; i <= n && (found = txt.findText(str)) != false; i++) {
-                    txt.moveStart("character", 1);
-                    txt.moveEnd("textedit");
-                }
-
-                if (found) {
-                    txt.moveStart("character", -1);
-                    txt.findText(str);
-                    txt.select();
-                    txt.scrollIntoView();
-                    n++;
-                } else {
-                    if (n > 0) {
-                        n = 0; findInPage(str);
-                    } else {
-                        alert("Not found.");
-                    }
-                }
-            }
-
-            return false;
-        }
-    </script>
-
 </head>
 
 <body>
@@ -95,13 +41,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="aboutUs.html">About</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="contact.html">Contact</a>
                     </li>
-                    <li>
-                        <a href="#">Contact</a>
+					<li>
+                        <a href="index-admin.html">Admin</a>
                     </li>
                 </ul>
             </div>
