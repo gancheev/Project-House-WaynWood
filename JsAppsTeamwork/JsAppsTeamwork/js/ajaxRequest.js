@@ -3,6 +3,7 @@
     var PARSE_REST_API_KEY = "ICtiKOhTxDXmSmQySN3sL88Q5wZ4WoUPsF7xwomN";
 
     loadCategories();
+    
 
     function loadCategories() {
         $.ajax({
@@ -18,8 +19,8 @@
     }
 
     function categoriesLoaded(data) {
-        
-        $('#categoryName').append('<h2>Categories</h2>')
+
+        $('#categoryName').append('<h6>Categories</h6>')
             .append('<input type="text" id="add-category-text" />')
             .append('<a id="add-category-button" href="#">Add category</a>')
             .append('<ul class="categories"></ul>');
@@ -27,6 +28,9 @@
 
         for (var c in data.results) {
             var category = data.results[c];
+            var sidebar = $('<button type="button" class="btn btn-warning sidebar-button"></button>');
+            sidebar.text(category.name);
+            sidebar.appendTo($('.list-unstyled'));
             var categoryItem = $('<li></li>');
             categoryItem.addClass(category.objectId);
             var categoryLink = $('<a href="#"></a>');

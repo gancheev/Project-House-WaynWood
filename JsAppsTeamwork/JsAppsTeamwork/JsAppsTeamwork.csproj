@@ -60,7 +60,9 @@
     <Content Include="css\blog-home.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="index-admin.html" />
     <Content Include="index.html" />
     <Content Include="js\ajaxRequest.js" />
     <Content Include="js\bootstrap.js" />

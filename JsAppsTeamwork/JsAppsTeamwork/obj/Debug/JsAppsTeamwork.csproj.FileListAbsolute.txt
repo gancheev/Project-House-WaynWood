@@ -4,3 +4,9 @@ C:\Users\luboslav\Desktop\JS-Apps\JS-Apps-Teamproject\trunk\JsAppsTeamwork\JsApp
 C:\Users\luboslav\Desktop\JS-Apps\JS-Apps-Teamproject\trunk\JsAppsTeamwork\JsAppsTeamwork\obj\Debug\JsAppsTeamwork.csprojResolveAssemblyReference.cache
 C:\Users\luboslav\Desktop\JS-Apps\JS-Apps-Teamproject\trunk\JsAppsTeamwork\JsAppsTeamwork\obj\Debug\JsAppsTeamwork.dll
 C:\Users\luboslav\Desktop\JS-Apps\JS-Apps-Teamproject\trunk\JsAppsTeamwork\JsAppsTeamwork\obj\Debug\JsAppsTeamwork.pdb
+C:\Users\luboslav\Desktop\JS-Apps-Teamproject\trunk\JsAppsTeamwork\JsAppsTeamwork\bin\JsAppsTeamwork.dll.config
+C:\Users\luboslav\Desktop\JS-Apps-Teamproject\trunk\JsAppsTeamwork\JsAppsTeamwork\bin\JsAppsTeamwork.dll
+C:\Users\luboslav\Desktop\JS-Apps-Teamproject\trunk\JsAppsTeamwork\JsAppsTeamwork\bin\JsAppsTeamwork.pdb
+C:\Users\luboslav\Desktop\JS-Apps-Teamproject\trunk\JsAppsTeamwork\JsAppsTeamwork\obj\Debug\JsAppsTeamwork.csprojResolveAssemblyReference.cache
+C:\Users\luboslav\Desktop\JS-Apps-Teamproject\trunk\JsAppsTeamwork\JsAppsTeamwork\obj\Debug\JsAppsTeamwork.dll
+C:\Users\luboslav\Desktop\JS-Apps-Teamproject\trunk\JsAppsTeamwork\JsAppsTeamwork\obj\Debug\JsAppsTeamwork.pdb

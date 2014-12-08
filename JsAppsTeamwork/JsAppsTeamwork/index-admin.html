@@ -11,6 +11,7 @@
     <title>House WaynWOOD</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/blog-home.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,68 +19,69 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
-	<script language="JavaScript"> 
-		var NS4 = (document.layers);
-		var IE4 = (document.all);
-		var win = window;
-		var n = 0;
-		
-		function findInPage(str) { var 
-			txt, i, found;
-			
-			if (str == "") {
-				return false;
-			}
-			
-			if (NS4) {
-				if (!win.find(str)) {
-					while (win.find(str, false, true)) {
-						n++;
-					}
-				} else {
-					n++;
-				}
-				
-				if (n == 0) {
-					alert("Not found.");
-				}
-			}
-			
-			if (IE4) {
-				txt = win.document.body.createTextRange();
-				for (i = 0; i <= n && (found = txt.findText(str)) != false; i++) {
-					txt.moveStart("character", 1);
-					txt.moveEnd("textedit");
-				}
 
-				if (found) {
-					txt.moveStart("character", -1);
-					txt.findText(str); 
-					txt.select();
-					txt.scrollIntoView();
-					n++;
-				} else {
-					if (n > 0) {
-						n = 0; findInPage(str); 
-					} else {
-						alert("Not found.");
-					}
-				}
-			}
-			
-			return false;
-		}
-	</script>
+    <script language="JavaScript">
+        var NS4 = (document.layers);
+        var IE4 = (document.all);
+        var win = window;
+        var n = 0;
+
+        function findInPage(str) {
+            var
+                txt, i, found;
+
+            if (str == "") {
+                return false;
+            }
+
+            if (NS4) {
+                if (!win.find(str)) {
+                    while (win.find(str, false, true)) {
+                        n++;
+                    }
+                } else {
+                    n++;
+                }
+
+                if (n == 0) {
+                    alert("Not found.");
+                }
+            }
+
+            if (IE4) {
+                txt = win.document.body.createTextRange();
+                for (i = 0; i <= n && (found = txt.findText(str)) != false; i++) {
+                    txt.moveStart("character", 1);
+                    txt.moveEnd("textedit");
+                }
+
+                if (found) {
+                    txt.moveStart("character", -1);
+                    txt.findText(str);
+                    txt.select();
+                    txt.scrollIntoView();
+                    n++;
+                } else {
+                    if (n > 0) {
+                        n = 0; findInPage(str);
+                    } else {
+                        alert("Not found.");
+                    }
+                }
+            }
+
+            return false;
+        }
+    </script>
 
 </head>
 
 <body>
 
- 
+
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-		
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -119,12 +121,12 @@
                     This is our blog
                 </h1>
                 <div id="add-category">
-                    
+
                 </div>
                 <div id="categoryName">
-                    
+
                 </div>
-                
+
                 <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
                 <hr>
                 <img class="img-responsive" src="http://placehold.it/900x300" alt="">
@@ -132,8 +134,8 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-                
-               
+
+
 
             </div>
 
@@ -147,38 +149,27 @@
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="button">
                                 <span class="glyphicon glyphicon-search"></span>
-                        </button>
+                            </button>
                         </span>
                     </div>
 
                 </div>
 
-                <div class="well">
-                    <h4>Blog Categories</h4>
+                <div class="sidebar">
+                    <h3>Categories</h3>
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <ul class="list-unstyled">
-                                
+
                             </ul>
                         </div>
 
                     </div>
 
                 </div>
-
-                <div class="well">
-                    <h4>Side Widget Well</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-                </div>
-
             </div>
-
         </div>
-
-
         <hr>
-
-
         <footer>
             <div class="row">
                 <div class="col-lg-12">
@@ -196,7 +187,7 @@
     <script src="js/ajaxRequest.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.noty.packaged.min"></script>
+    <script src="js/jquery.noty.packaged.min"></script>
 
 </body>
 
