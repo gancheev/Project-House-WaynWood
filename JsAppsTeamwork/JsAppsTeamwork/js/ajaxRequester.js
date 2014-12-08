@@ -9,6 +9,9 @@
   
 
     function loadCategories() {
+
+    $('#categoryName').html('');   
+
         $.ajax({
             method: "GET",
             headers: {
@@ -22,6 +25,8 @@
     }
 
     function categoriesLoaded(data) {
+
+        $('#categoryName').html('');   
 
         $('#categoryName').append('<h2>Categories</h2>')
             .append('<input type="text" id="add-category-text" />')
