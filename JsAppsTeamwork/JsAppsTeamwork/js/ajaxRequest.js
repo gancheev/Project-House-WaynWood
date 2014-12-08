@@ -20,9 +20,9 @@
 
     function categoriesLoaded(data) {
 
-        $('#categoryName').append('<h6>Categories</h6>')
+        $('#categoryName').append('<h2>Categories</h2>')
             .append('<input type="text" id="add-category-text" />')
-            .append('<a id="add-category-button" href="#">Add category</a>')
+            .append('<a class="btn btn-success" id="add-category-button" href="#">Add category</a>')
             .append('<ul class="categories"></ul>');
         $('#add-category-button').click(addCategory);
 
@@ -31,7 +31,7 @@
             var sidebar = $('<button type="button" class="btn btn-warning sidebar-button"></button>');
             sidebar.text(category.name);
             sidebar.appendTo($('.list-unstyled'));
-            var categoryItem = $('<li></li>');
+            var categoryItem = $('<li class="styled-li"></li>');
             categoryItem.addClass(category.objectId);
             var categoryLink = $('<a href="#"></a>');
             categoryLink.data('category', category);
@@ -47,11 +47,11 @@
     }
 
     function addControlButtons(categoryItem, category) {
-        var removeButton = $('<a class="remove-category" href="#">Remove</a>');
+        var removeButton = $('<a class="remove-category btn btn-danger" href="#">Remove</a>');
         removeButton.data('category', category);
         removeButton.click(removeCategory);
 
-        var editButton = $('<a class="edit-category" href="#">Edit</a>');
+        var editButton = $('<a class="edit-category btn btn-info" href="#">Edit</a>');
         editButton.data('category', category);
         editButton.click(editCategory);
 
@@ -122,8 +122,8 @@
         if (!$(this).parent().has('ul').length) {
             var targetLi = $("li:contains('" + category.name + "')");
             var postTitle = $('<br><input type="text" class="add-post-title" placeholder="Post name" /><br>');
-            var postContent = $('<textarea class="add-post-content" placeholder="Post content"></textarea>');
-            var addPostButton = $('<a id="add-post-button" href="#">Add a post</a>');
+            var postContent = $('<textarea class="add-post-content" placeholder="Post content"></textarea><br>');
+            var addPostButton = $('<a id="add-post-button" class="btn btn-primary" href="#">Add a post</a>');
             addPostButton.data('category', category);
             addPostButton.data('postTitle', postTitle);
             addPostButton.data('postContent', postContent);

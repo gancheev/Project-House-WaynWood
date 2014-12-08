@@ -31,3 +31,32 @@
 .sidebar h3 {
     text-align: center;
 }
+input {
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    background-color: #e3e3e3;
+    height: 32px;
+    width: 200px;
+    margin: 10px;
+}
+textarea {
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    background-color: #e3e3e3;
+    width: 250px;
+    height: 70px;
+}
+.styled-li {
+    margin: 10px;
+    list-style-type: none;
+    background-color: #c2c2c2;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.edit-category, .remove-category {
+    float: right;
+}
