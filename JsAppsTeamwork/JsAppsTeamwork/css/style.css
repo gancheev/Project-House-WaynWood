@@ -60,3 +60,8 @@ textarea {
 .edit-category, .remove-category {
     float: right;
 }
+
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+    margin-left: 10px;
+	margin-top: 10px;
+}
