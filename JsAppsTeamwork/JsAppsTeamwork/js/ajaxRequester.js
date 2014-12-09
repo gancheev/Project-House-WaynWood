@@ -391,6 +391,46 @@
 
         commentDiv.appendTo(targetLi);
     }
+	
+	//Search functionality
+	//=========================================================
+	
+	$(document).ready(function(){
+			$('.btn-default').click(searchCategory);
+	});
+	
+	
+	function searchCategory(){
+
+			$.ajax({
+				method: "GET",
+				headers: {
+					"X-Parse-Application-Id": PARSE_APP_ID,
+					"X-Parse-REST-API-Key": PARSE_REST_API_KEY
+				},
+				url: "https://api.parse.com/1/classes/Post",
+				success: searchCategoryLoaded,
+				error: error
+			});
+
+	}
+	
+	function searchCategoryLoaded(data){
+	
+		var postSearch = $('.form-control').val();
+        var postSearch = $('<ul></ul>');
+        for (var c in data.results) {
+            var postTitle = data.results[c].title;
+            var postItem = $('<li></li>');
+            if(postTitle.toLocaleLowerCase().indexOf(postSearch ) > -1){
+                postItem.append(postTitle);
+                postItem.appendTo(postSearch);
+            }
+        }
+
+	}
+	
+	//=========================================================
 
     function error() {
         noty({
