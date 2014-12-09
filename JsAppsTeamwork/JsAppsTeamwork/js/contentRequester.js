@@ -150,10 +150,10 @@
             var editPostButton = $('<a href="#">Edit</a>').hide();
            
 
-            var commentAuthor = $('<input type="text" class="add-comment-author" placeholder="Author..."/>');
-            var commentContent = $('<input type="text" class="add-comment-content" placeholder="Content..."/>');
+            var commentAuthor = $('<input type="text" required class="add-comment-author" placeholder="Author..." />');
+            var commentContent = $('<input type="text" required class="add-comment-content" placeholder="Content..."  />');
             var addCommentButton = $('<a id="add-post-button" class="btn btn-success" href="#">Add a comment</a>');
-
+            commentAuthor.prop("required", true);
             var showCommentButton = $('<a id="show-comment-button" href="#">Show comments</a>');
             showCommentButton.data('comment', data.results[p]);
             showCommentButton.click(loadComments);
@@ -370,6 +370,46 @@
 
         commentDiv.appendTo(targetLi);
     }
+
+    //Search functionality
+    //=========================================================
+
+    $(document).ready(function () {
+        $('.btn-default').click(searchCategory);
+    });
+
+
+    function searchCategory() {
+
+        $.ajax({
+            method: "GET",
+            headers: {
+                "X-Parse-Application-Id": PARSE_APP_ID,
+                "X-Parse-REST-API-Key": PARSE_REST_API_KEY
+            },
+            url: "https://api.parse.com/1/classes/Post",
+            success: searchCategoryLoaded,
+            error: error
+        });
+
+    }
+
+    function searchCategoryLoaded(data) {
+
+        var postSearch = $('.form-control').val();
+        var postSearch = $('<ul></ul>');
+        for (var c in data.results) {
+            var postTitle = data.results[c].title;
+            var postItem = $('<li></li>');
+            if (postTitle.toLocaleLowerCase().indexOf(postSearch) > -1) {
+                postItem.append(postTitle);
+                postItem.appendTo(postSearch);
+            }
+        }
+
+    }
+
+    //=========================================================
 
     function error() {
         noty({

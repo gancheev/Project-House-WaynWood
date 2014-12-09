@@ -2,11 +2,23 @@
     var PARSE_APP_ID = "qPuWyYL6iGXkMrpboqlyrGcURCw3iVSRl0YHX0rX";
     var PARSE_REST_API_KEY = "ICtiKOhTxDXmSmQySN3sL88Q5wZ4WoUPsF7xwomN";
 
-    loadCategories();
+   
 
-    var password = 'admin';
-    //TODO PASSWORD REQEST
-  
+    var password = "admin";
+    var user = "admin";
+    var use = prompt("Enter the username", "");
+    var pas = prompt("Enter in the password", "");
+    
+
+    if (use.toLowerCase() == user || pas.toLowerCase() === password) {
+        
+
+        
+        loadCategories();
+    }
+    else {
+        location = "../index.html";
+    }
 
     function loadCategories() {
 
@@ -440,5 +452,6 @@
             timeout: 5000
         });
     }
+  
 });
 

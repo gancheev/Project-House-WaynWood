@@ -1,0 +1,12 @@
+C:\Users\GanchevNeznamBe\Desktop\New folder (2)\trunk\JsAppsTeamwork\JsAppsTeamwork\bin\JsAppsTeamwork.dll.config
+C:\Users\GanchevNeznamBe\Desktop\New folder (2)\trunk\JsAppsTeamwork\JsAppsTeamwork\bin\JsAppsTeamwork.dll
+C:\Users\GanchevNeznamBe\Desktop\New folder (2)\trunk\JsAppsTeamwork\JsAppsTeamwork\bin\JsAppsTeamwork.pdb
+C:\Users\GanchevNeznamBe\Desktop\New folder (2)\trunk\JsAppsTeamwork\JsAppsTeamwork\obj\Debug\JsAppsTeamwork.csprojResolveAssemblyReference.cache
+C:\Users\GanchevNeznamBe\Desktop\New folder (2)\trunk\JsAppsTeamwork\JsAppsTeamwork\obj\Debug\JsAppsTeamwork.dll
+C:\Users\GanchevNeznamBe\Desktop\New folder (2)\trunk\JsAppsTeamwork\JsAppsTeamwork\obj\Debug\JsAppsTeamwork.pdb
+C:\Users\GanchevNeznamBe\Desktop\JsAppsTeamwork\JsAppsTeamwork\bin\JsAppsTeamwork.dll.config
+C:\Users\GanchevNeznamBe\Desktop\JsAppsTeamwork\JsAppsTeamwork\bin\JsAppsTeamwork.dll
+C:\Users\GanchevNeznamBe\Desktop\JsAppsTeamwork\JsAppsTeamwork\bin\JsAppsTeamwork.pdb
+C:\Users\GanchevNeznamBe\Desktop\JsAppsTeamwork\JsAppsTeamwork\obj\Debug\JsAppsTeamwork.csprojResolveAssemblyReference.cache
+C:\Users\GanchevNeznamBe\Desktop\JsAppsTeamwork\JsAppsTeamwork\obj\Debug\JsAppsTeamwork.dll
+C:\Users\GanchevNeznamBe\Desktop\JsAppsTeamwork\JsAppsTeamwork\obj\Debug\JsAppsTeamwork.pdb
