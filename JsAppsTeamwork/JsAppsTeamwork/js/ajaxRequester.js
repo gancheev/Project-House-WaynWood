@@ -144,7 +144,7 @@
 
         if (!$(this).parent().has('ul').length) {
             var targetLi = $("li:contains('" + category.name + "')");
-            var postTitle = $('<br><input type="text" class="add-post-title" placeholder="Post name" /><br>');
+            var postTitle = $('<input type="text" class="add-post-title" placeholder="Post name" />');
             var postContent = $('<textarea class="add-post-content" placeholder="Post content"></textarea><br>');
             var addPostButton = $('<a id="add-post-button" class="btn btn-primary" href="#">Add a post</a>');
             addPostButton.data('category', category);
@@ -180,6 +180,8 @@
             var editPostButton = $('<a href="#">Edit</a>');
             editPostButton.data('post', data.results[p]);
             editPostButton.click(editPost);
+
+            console.log(data.results[p]);
 
             var commentAuthor = $('<input type="text" class="add-comment-author" placeholder="Author..."/>');
             var commentContent = $('<input type="text" class="add-comment-content" placeholder="Content..."/>');
